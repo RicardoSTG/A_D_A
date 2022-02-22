@@ -42,9 +42,22 @@ public class Dijkstra {
   }
 
   public static void main(String[] args) {
-    int graf[][] = new int[][] { { 0, 0, 1, 2, 0, 0, 0 }, { 0, 0, 2, 0, 0, 3, 0 }, { 1, 2, 0, 1, 3, 0, 0 },
-        { 2, 0, 1, 0, 0, 0, 1 }, { 0, 0, 3, 0, 0, 2, 0 }, { 0, 3, 0, 0, 2, 0, 1 }, { 0, 0, 0, 1, 0, 1, 0 } };
-    Dijkstra T = new Dijkstra();
-    T.dijkstra(graf, 0);
+   nt graf[][] = new int[][] { { 0, 0, 1, 2, 0, 0, 0 }, { 0, 0, 2, 0, 0, 3, 0 }, { 1, 2, 0, 1, 3, 0, 0 },
+          { 2, 0, 1, 0, 0, 0, 1 }, { 0, 0, 3, 0, 0, 2, 0 }, { 0, 3, 0, 0, 2, 0, 1 }, { 0, 0, 0, 1, 0, 1, 0 } };
+   
+      Dijkstra T = new Dijkstra();
+      File gnu = new File ("dijkstra.txt");
+    gnu.createNewFile();
+      BufferedWriter bw = new BufferedWriter(new FileWriter(gnu));
+      long Tinicio1, Tfinal1;
+      long tiempo;
+      Tinicio1 = System.nanoTime();
+      T.dijkstra(graf, 0);
+      Tfinal1 = System.nanoTime();
+      tiempo = Tfinal1-Tinicio1;
+      bw.write(tiempo+"\n");
+      bw.close();
+      
+    Desktop.getDesktop().open(gnu);
   }
 }

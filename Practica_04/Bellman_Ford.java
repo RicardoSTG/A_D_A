@@ -41,6 +41,17 @@ public class Bellman_Ford {
 						{ 1, 4, 2 }, { 3, 2, 5 }, 
 						{ 3, 1, 1 }, { 4, 3, -3 } };
 
-		BellmanFord(graf, V, E, 0);
+		File gnu2 = new File ("BellmanFord.txt");
+		gnu2.createNewFile();
+    	BufferedWriter bw2 = new BufferedWriter(new FileWriter(gnu2));
+    	long Tinicio2, Tfinal2;
+    	long tiempo2;
+    	Tinicio2 = System.nanoTime();
+    	BellmanFord(graf, V, E, 0);
+    	Tfinal2 = System.nanoTime();
+    	tiempo2 = Tfinal2-Tinicio2;
+    	bw2.write(tiempo2+"\n");
+    	bw2.close();
+    	Desktop.getDesktop().open(gnu2);
 	}
 }
