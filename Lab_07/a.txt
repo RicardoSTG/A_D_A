@@ -1,0 +1,5 @@
+Comparacion de Tiempo:
+
+108042600------	Dijkstra 
+416700---------	Bellman Ford 
+1924300--------	Floyd Warshall 
